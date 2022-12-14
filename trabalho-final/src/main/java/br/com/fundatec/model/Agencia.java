@@ -1,5 +1,6 @@
 package br.com.fundatec.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,5 +25,6 @@ public class Agencia {
     private Banco banco;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "agencia", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("agencia")
     private Set<Conta> contas;
 }

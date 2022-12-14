@@ -1,5 +1,6 @@
 package br.com.fundatec.dto;
 
+import br.com.fundatec.model.Banco;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
@@ -16,4 +17,7 @@ public class AgenciaCreateDTO {
     @NotBlank
     @Schema(example = "Ricardo")
     private String nome;
+
+@NotBlank
+    private Banco banco;
 }

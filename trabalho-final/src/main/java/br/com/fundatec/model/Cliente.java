@@ -1,5 +1,6 @@
 package br.com.fundatec.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Cliente {
 
     @OneToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "conta_id",referencedColumnName = "id")
+    @JsonIgnoreProperties("cliente")
     private Conta conta;
 
 }

@@ -1,5 +1,6 @@
 package br.com.fundatec.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,5 +27,6 @@ public class Banco {
     private String cnpj;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "banco", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("banco")
     private Set<Agencia> agencias;
 }
