@@ -5,6 +5,7 @@ import br.com.fundatec.dto.AgenciaDTO;
 import br.com.fundatec.dto.ClienteCreateDTO;
 import br.com.fundatec.dto.ClienteDTO;
 import br.com.fundatec.model.Cliente;
+import br.com.fundatec.model.Conta;
 import br.com.fundatec.repository.ClienteRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -48,7 +49,11 @@ public class ClienteService {
     public ClienteDTO clienteFindById (Integer id) throws RegraDeNegocioException {
         Cliente cliente = findById(id);
 
-        ClienteDTO clienteDTO = objectMapper.convertValue(cliente, ClienteDTO.class);
+        ClienteDTO clienteDTO = new ClienteDTO();
+        clienteDTO.setIdCliente(cliente.getIdCliente());
+        clienteDTO.setCpf(cliente.getCpf());
+        clienteDTO.setNome(cliente.getNome());
+
         return clienteDTO;
     }
 
@@ -59,12 +64,15 @@ public class ClienteService {
     }
 
     private Cliente findById(Integer idCliente) throws RegraDeNegocioException {
-        Optional clienteRetorno = clienteRepository.findById(idCliente);
+        Optional<Cliente> clienteRetorno = clienteRepository.findById(idCliente);
         if (clienteRetorno.isEmpty()) {
             throw new RegraDeNegocioException("Cliente não encontrado!");
         }
 
-        Cliente cliente = objectMapper.convertValue(clienteRetorno, Cliente.class);
+        Cliente cliente = new Cliente();
+        cliente.setIdCliente(clienteRetorno.get().getIdCliente());
+        cliente.setNome(clienteRetorno.get().getNome());
+        cliente.setCpf(clienteRetorno.get().getCpf());
 
         return cliente;
     }

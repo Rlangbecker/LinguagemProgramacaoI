@@ -20,6 +20,4 @@ public class ContaCreateDTO {
 
     @Schema(example = "5000")
     private double saldo;
-
-    private TipoConta tipoConta;
 }

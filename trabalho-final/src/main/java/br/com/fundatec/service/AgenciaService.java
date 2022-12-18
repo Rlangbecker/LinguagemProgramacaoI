@@ -3,6 +3,7 @@ package br.com.fundatec.service;
 import br.com.fundatec.Exception.RegraDeNegocioException;
 import br.com.fundatec.dto.AgenciaCreateDTO;
 import br.com.fundatec.dto.AgenciaDTO;
+import br.com.fundatec.dto.AgenciaUpdateDTO;
 import br.com.fundatec.dto.BancoDTO;
 import br.com.fundatec.model.Agencia;
 import br.com.fundatec.model.Banco;
@@ -40,20 +41,29 @@ public class AgenciaService {
         return agenciaDTO;
     }
 
-    public AgenciaDTO update(Integer idAgencia, AgenciaCreateDTO agenciaCreateDTO) throws RegraDeNegocioException {
+    public AgenciaDTO update(Integer idAgencia, AgenciaUpdateDTO agenciaUpdateDTO) throws RegraDeNegocioException {
         Agencia agenciaRetorno = findById(idAgencia);
 
-        agenciaRetorno.setNome(agenciaCreateDTO.getNome());
-        agenciaRetorno.setNumero(agenciaCreateDTO.getNumero());
+        agenciaRetorno.setNome(agenciaUpdateDTO.getNome());
+        agenciaRetorno.setNumero(agenciaUpdateDTO.getNumero());
+        agenciaRepository.save(agenciaRetorno);
 
-        AgenciaDTO agenciaDTO = objectMapper.convertValue(agenciaRepository.save(agenciaRetorno), AgenciaDTO.class);
+        AgenciaDTO agenciaDTO = new AgenciaDTO();
+        agenciaDTO.setNome(agenciaRetorno.getNome());
+        agenciaDTO.setIdAgencia(agenciaRetorno.getIdAgencia());
+        agenciaDTO.setNumero(agenciaRetorno.getNumero());
+        BancoDTO bancoDTO = bancoService.bancoFindById(agenciaRetorno.getBanco().getIdBanco());
+        agenciaDTO.setBancoDTO(bancoDTO);
 
         return agenciaDTO;
     }
 
     public AgenciaDTO agenciaFindById(Integer idAgencia) throws RegraDeNegocioException {
         Agencia agencia = findById(idAgencia);
-        AgenciaDTO agenciaDTO = objectMapper.convertValue(agencia, AgenciaDTO.class);
+        AgenciaDTO agenciaDTO = new AgenciaDTO();
+        agenciaDTO.setIdAgencia(agencia.getIdAgencia());
+        agenciaDTO.setNome(agencia.getNome());
+        agenciaDTO.setNumero(agencia.getNumero());
         BancoDTO bancoDTO = bancoService.bancoFindById(agencia.getBanco().getIdBanco());
         agenciaDTO.setBancoDTO(bancoDTO);
 

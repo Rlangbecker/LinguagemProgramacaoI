@@ -3,6 +3,7 @@ package br.com.fundatec.controller;
 import br.com.fundatec.Exception.RegraDeNegocioException;
 import br.com.fundatec.dto.AgenciaCreateDTO;
 import br.com.fundatec.dto.AgenciaDTO;
+import br.com.fundatec.dto.AgenciaUpdateDTO;
 import br.com.fundatec.model.Agencia;
 import br.com.fundatec.service.AgenciaService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -46,8 +47,8 @@ public class AgenciaController {
 
     @Operation(summary = "Editar agencia", description = "Edita uma agencia pelo ID inserido")
     @PutMapping("/update")
-    public ResponseEntity<AgenciaDTO> update (@RequestParam Integer idAgencia, @RequestBody AgenciaCreateDTO agenciaCreateDTO) throws RegraDeNegocioException {
-      AgenciaDTO agenciaDTO = agenciaService.update(idAgencia,agenciaCreateDTO);
+    public ResponseEntity<AgenciaDTO> update (@RequestParam Integer idAgencia, @RequestBody AgenciaUpdateDTO agenciaUpdateDTO) throws RegraDeNegocioException {
+      AgenciaDTO agenciaDTO = agenciaService.update(idAgencia,agenciaUpdateDTO);
 
     return new ResponseEntity<>(agenciaDTO,HttpStatus.OK);
     }
