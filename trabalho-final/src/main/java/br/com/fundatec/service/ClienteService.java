@@ -1,6 +1,7 @@
 package br.com.fundatec.service;
 
 import br.com.fundatec.Exception.RegraDeNegocioException;
+import br.com.fundatec.dto.AgenciaDTO;
 import br.com.fundatec.dto.ClienteCreateDTO;
 import br.com.fundatec.dto.ClienteDTO;
 import br.com.fundatec.model.Cliente;
@@ -9,8 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.PersistenceUnit;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,6 +25,7 @@ public class ClienteService {
         Cliente cliente = objectMapper.convertValue(clienteCreateDTO, Cliente.class);
 
         ClienteDTO clienteDTO = objectMapper.convertValue(clienteRepository.save(cliente), ClienteDTO.class);
+
         return clienteDTO;
     }
 
@@ -55,7 +55,7 @@ public class ClienteService {
     public void delete(Integer id) throws RegraDeNegocioException {
         Cliente cliente = findById(id);
 
-        clienteRepository.deleteById(cliente.getId());
+        clienteRepository.deleteById(cliente.getIdCliente());
     }
 
     private Cliente findById(Integer idCliente) throws RegraDeNegocioException {

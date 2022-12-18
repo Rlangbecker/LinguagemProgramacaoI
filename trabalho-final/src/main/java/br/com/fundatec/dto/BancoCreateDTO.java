@@ -3,7 +3,6 @@ package br.com.fundatec.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -16,7 +15,7 @@ public class BancoCreateDTO {
     private Integer codigo;
 
     @NotBlank
-    @Schema(example = "Cailan")
+    @Schema(example = "FUNDATEC")
     private String nome;
 
     @NotBlank

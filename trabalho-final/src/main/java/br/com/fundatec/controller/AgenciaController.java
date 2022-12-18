@@ -3,6 +3,7 @@ package br.com.fundatec.controller;
 import br.com.fundatec.Exception.RegraDeNegocioException;
 import br.com.fundatec.dto.AgenciaCreateDTO;
 import br.com.fundatec.dto.AgenciaDTO;
+import br.com.fundatec.model.Agencia;
 import br.com.fundatec.service.AgenciaService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class AgenciaController {
 
     @Operation(summary = "Criar agencia", description = "Criar agencia")
     @PostMapping
-    public ResponseEntity<AgenciaDTO> create (@RequestBody AgenciaCreateDTO agenciaCreateDTO){
+    public ResponseEntity<AgenciaDTO> create (@RequestBody AgenciaCreateDTO agenciaCreateDTO) throws RegraDeNegocioException {
        AgenciaDTO agenciaDTO = agenciaService.create(agenciaCreateDTO);
 
        return new ResponseEntity<>(agenciaDTO, HttpStatus.OK);

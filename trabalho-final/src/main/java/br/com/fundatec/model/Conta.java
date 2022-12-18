@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Reference;
 
 import javax.persistence.*;
 
@@ -18,24 +17,26 @@ public class Conta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "ID_CONTA")
+    private Integer idConta;
 
-    @Column(nullable = false)
+    @Column(name = "numero")
     private Integer numero;
 
-    @Column(nullable = false)
+    @Column(name = "saldo")
     private double saldo;
 
     @Enumerated(EnumType.ORDINAL)
+    @Column(name = "tipo_conta")
     private TipoConta tipoConta;
 
     @OneToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "cliente_id",referencedColumnName = "id")
+    @JoinColumn(name = "id_cliente")
     @JsonIgnoreProperties("conta")
-
     private Cliente cliente;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_agencia", updatable = false)
     private Agencia agencia;
 
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class BancoDTO {
 
-    private Integer id;
+    private Integer idBanco;
     private Integer codigo;
     private String nome;
     private String cnpj;

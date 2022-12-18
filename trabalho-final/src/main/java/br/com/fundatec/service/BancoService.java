@@ -2,7 +2,6 @@ package br.com.fundatec.service;
 
 
 import br.com.fundatec.Exception.RegraDeNegocioException;
-import br.com.fundatec.dto.AgenciaDTO;
 import br.com.fundatec.dto.BancoCreateDTO;
 import br.com.fundatec.dto.BancoDTO;
 import br.com.fundatec.model.Agencia;
@@ -22,7 +21,6 @@ public class BancoService {
 
     private final BancoRepository bancoRepository;
     private final ObjectMapper objectMapper;
-
 
     public BancoDTO create(BancoCreateDTO bancoCreateDTO) {
         Banco bancoRetorno = objectMapper.convertValue(bancoCreateDTO, Banco.class);
@@ -55,11 +53,15 @@ public class BancoService {
 
 
     private Banco findById(Integer idBanco) throws RegraDeNegocioException {
-        Optional bancoRetorno = bancoRepository.findById(idBanco);
+        Optional<Banco> bancoRetorno = bancoRepository.findById(idBanco);
         if (bancoRetorno.isEmpty()) {
             throw new RegraDeNegocioException("Banco não encontrado!");
         }
-        Banco banco = objectMapper.convertValue(bancoRetorno, Banco.class);
+        Banco banco = new Banco();
+        banco.setIdBanco(bancoRetorno.get().getIdBanco());
+        banco.setNome(bancoRetorno.get().getNome());
+        banco.setCnpj(bancoRetorno.get().getCnpj());
+        banco.setCodigo(bancoRetorno.get().getCodigo());
 
         return banco;
     }
@@ -74,7 +76,7 @@ public class BancoService {
     public void delete(Integer idBanco) throws RegraDeNegocioException {
         Banco banco = findById(idBanco);
 
-        bancoRepository.deleteById(banco.getId());
+        bancoRepository.deleteById(banco.getIdBanco());
     }
 
 }

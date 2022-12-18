@@ -17,16 +17,16 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "ID_CLIENTE")
+    private Integer idCliente;
 
-    @Column(nullable = false)
+    @Column(name = "cpf")
     private String cpf;
 
-    @Column(nullable = false)
+    @Column(name = "nome")
     private String nome;
 
     @OneToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "conta_id",referencedColumnName = "id")
     @JsonIgnoreProperties("cliente")
     private Conta conta;
 

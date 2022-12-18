@@ -13,17 +13,21 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "banco")
 public class Banco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "ID_BANCO")
+    private Integer idBanco;
 
+    @Column(name = "codigo")
     private Integer codigo;
 
+    @Column(name ="nome")
     private String nome;
 
+    @Column(name = "cnpj")
     private String cnpj;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "banco", cascade = CascadeType.ALL)

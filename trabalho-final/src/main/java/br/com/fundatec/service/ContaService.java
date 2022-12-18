@@ -3,14 +3,12 @@ package br.com.fundatec.service;
 import br.com.fundatec.Exception.RegraDeNegocioException;
 import br.com.fundatec.dto.ContaCreateDTO;
 import br.com.fundatec.dto.ContaDTO;
-import br.com.fundatec.model.Cliente;
 import br.com.fundatec.model.Conta;
 import br.com.fundatec.repository.ContaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -21,10 +19,16 @@ public class ContaService {
     private final ObjectMapper objectMapper;
     private final ContaRepository contaRepository;
 
-    public ContaDTO create(ContaCreateDTO contaCreateDTO) {
+    private final AgenciaService agenciaService;
+    private final ClienteService clienteService;
+
+    public ContaDTO create(ContaCreateDTO contaCreateDTO) throws RegraDeNegocioException {
         Conta conta = objectMapper.convertValue(contaCreateDTO, Conta.class);
 
         ContaDTO contaDTO = objectMapper.convertValue(contaRepository.save(conta), ContaDTO.class);
+
+        contaDTO.setAgencia(agenciaService.agenciaFindById(contaCreateDTO.getIdAgencia()));
+        contaDTO.setCliente(clienteService.clienteFindById(contaCreateDTO.getIdCliente()));
         return contaDTO;
     }
 
