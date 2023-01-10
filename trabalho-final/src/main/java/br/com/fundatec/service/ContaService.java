@@ -24,6 +24,11 @@ public class ContaService {
     private final ClienteService clienteService;
 
     public ContaDTO create(TipoConta tipoConta, ContaCreateDTO contaCreateDTO) throws RegraDeNegocioException {
+       Optional<Conta> contaFoundByNumero =contaRepository.findContaByNumero(contaCreateDTO.getNumero());
+       if(contaFoundByNumero.isPresent()){
+           throw  new RegraDeNegocioException("Conta com este numero já existe!");
+       }
+
         Conta conta = objectMapper.convertValue(contaCreateDTO, Conta.class);
         conta.setTipoConta(tipoConta);
         Cliente cliente = objectMapper.convertValue(clienteService.clienteFindById(contaCreateDTO.getIdCliente()), Cliente.class);

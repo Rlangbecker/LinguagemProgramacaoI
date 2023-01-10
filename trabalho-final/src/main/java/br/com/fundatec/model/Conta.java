@@ -8,6 +8,33 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * <h1> Classe Conta</h1>
+ *
+ * <p> Classe responsavel por moldar a tabela Conta no Banco de dados.</p>
+ * <p>Possui as seguintes propriedades: </p>
+ *  <ul>
+ *     <li>idConta - Integer </li>
+ *     <li>numero - Integer</li>
+ *     <li>saldo - Double</li>
+ *     <li>tipoConta - TipoConta</li>
+ *     <li>cliente - Cliente</li>
+ *     <li>agencia - Agencia</li>
+ *  </ul>
+ *
+ * <p> Contem ligacao com as Entidades Cliente e Agencia, onde Agencia tem Contas e a mesma possui clientes.</p>
+ * <ul>
+ *     <li>Ligacao N-1 entre Conta - Agencia</li>
+ *     <li>Ligacao 1-1 entre Conta - Cliente</li>
+ * </ul>
+ *
+ * @author Cailan Grott e Ricardo Langbecker
+ * @see Conta
+ * @see Cliente
+ * @see TipoConta
+ * @since 1.0
+ */
+
 @Getter
 @Setter
 @AllArgsConstructor

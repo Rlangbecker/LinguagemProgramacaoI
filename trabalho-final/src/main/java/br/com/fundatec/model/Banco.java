@@ -9,6 +9,30 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * <h1> Classe Banco</h1>
+ *
+ * <p> Classe responsavel por moldar a tabela Banco no Banco de dados.</p>
+ * <p>Possui as seguintes propriedades: </p>
+ *  <ul>
+ *     <li>idBanco - Integer </li>
+ *     <li>codigo - Integer</li>
+ *     <li>nome - String</li>
+ *     <li>cnpj - String</li>
+ *     <li>agencias - Set/Agencia</li>
+ *
+ *  </ul>
+ *
+ * <p> Contem ligacao com a Entidade Agencia, onde Banco possui agencias.</p>
+ * <ul>
+ *     <li>Ligacao 1-N entre Banco - Agencia</li>
+ * </ul>
+ *
+ * @author Cailan Grott e Ricardo Langbecker
+ * @see Agencia
+ * @since 1.0
+ */
+
 @Getter
 @Setter
 @AllArgsConstructor

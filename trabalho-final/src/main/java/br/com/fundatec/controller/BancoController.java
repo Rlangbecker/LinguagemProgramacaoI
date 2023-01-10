@@ -23,7 +23,7 @@ public class BancoController {
 
     @Operation(summary = "Criar um banco", description = "Criar um banco")
     @PostMapping
-    public ResponseEntity<BancoDTO> create(@RequestBody BancoCreateDTO bancoCreateDTO) {
+    public ResponseEntity<BancoDTO> create(@RequestBody BancoCreateDTO bancoCreateDTO) throws RegraDeNegocioException {
 
         BancoDTO bancoDTO = bancoService.create(bancoCreateDTO);
 

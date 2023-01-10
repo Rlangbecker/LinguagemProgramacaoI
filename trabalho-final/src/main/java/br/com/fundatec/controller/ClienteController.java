@@ -21,7 +21,7 @@ public class ClienteController {
 
     @Operation(summary = "Criar cliente", description = "Cria um novo cliente")
     @PostMapping
-    public ResponseEntity<ClienteDTO> create(@RequestBody ClienteCreateDTO clienteCreateDTO) {
+    public ResponseEntity<ClienteDTO> create(@RequestBody ClienteCreateDTO clienteCreateDTO) throws RegraDeNegocioException {
         ClienteDTO clienteDTO = clienteService.create(clienteCreateDTO);
 
         return new ResponseEntity<>(clienteDTO, HttpStatus.OK);

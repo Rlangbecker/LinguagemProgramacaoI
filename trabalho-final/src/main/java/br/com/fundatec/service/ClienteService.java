@@ -22,7 +22,13 @@ public class ClienteService {
     private final ObjectMapper objectMapper;
     private final ClienteRepository clienteRepository;
 
-    public ClienteDTO create(ClienteCreateDTO clienteCreateDTO) {
+    public ClienteDTO create(ClienteCreateDTO clienteCreateDTO) throws RegraDeNegocioException {
+
+        Optional<Cliente> clienteFoundByCpf = clienteRepository.findClienteByCpf(clienteCreateDTO.getCpf());
+        if(clienteFoundByCpf.isPresent()){
+            throw new RegraDeNegocioException("CPF já cadastrado!");
+        }
+
         Cliente cliente = objectMapper.convertValue(clienteCreateDTO, Cliente.class);
 
         ClienteDTO clienteDTO = objectMapper.convertValue(clienteRepository.save(cliente), ClienteDTO.class);

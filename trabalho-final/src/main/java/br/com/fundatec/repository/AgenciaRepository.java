@@ -7,10 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface AgenciaRepository extends JpaRepository<Agencia,Integer> {
-//    @Query("select new br.com.fundatec.dto.AgenciaDTO(a.nome, a.) from AgenciaDTO a ")
-//    List<AgenciaDTO> query();
 
+    Optional<Agencia> findAgenciaByNome(String nome);
+    Optional<Agencia> findAgenciaByNumero(Integer numero);
 }
