@@ -1,7 +1,7 @@
 package br.com.fundatec.service;
 
-
 import br.com.fundatec.Exception.RegraDeNegocioException;
+import br.com.fundatec.dto.AgenciaCreateDTO;
 import br.com.fundatec.dto.BancoCreateDTO;
 import br.com.fundatec.dto.BancoDTO;
 import br.com.fundatec.model.Banco;
@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 /**
  * <h1> Classe BancoService</h1>
  *
- * <p> Classe responsavel pelo CRUD e por gerir as regras de negocio.</p>
- * <p> Contem vinculo direto com BancoRepository para poder persistir as informações necessáras</p>
- * <p>Possui os seguintes metodos</p>
+ * <p> Classe responsável pelo CRUD e por gerir as regras de negocio.</p>
+ * <p> Contem vinculo direto com BancoRepository para poder persistir as informações necessárias</p>
+ * <p>Possui os seguintes métodos</p>
  * <ul>
  *    <li>verificarSeBancoExiste - <b>private</b></li>
  *    <li>create - <b>public</b></li>
@@ -43,17 +43,17 @@ public class BancoService {
     private final ObjectMapper objectMapper;
 
     /**
-     * Metodo para verificar se há tentativa de duplicidade no Banco de dados
+     * Metodo para verificar se ha tentativa de duplicidade no Banco de dados
      *
      * @param bancoCreateDTO BancoCreateDTO
      * @return {@link Void} void
      * @throws RegraDeNegocioException - Caso o bancoCreateDTO possua informacoes iguais a algum outro banco que exista no banco de dados
-     *                                 ele lança uma excecao, informando o motivo.
+     *                                 ele lanca uma excecao, informando o motivo.
      *                                 <p>Motivos para lancar a excecao: </p>
      *                                   <ul>
-     *                                      <li>Banco com o mesmo nome já existente no banco de dados</li>
-     *                                      <li>Banco com o mesmo codigo já existente no banco de dados</li>
-     *                                      <li>Banco com o mesmo cnpj já existente no banco de dados</li>
+     *                                      <li>Banco com o mesmo nome ja existente no banco de dados</li>
+     *                                      <li>Banco com o mesmo código ja existente no banco de dados</li>
+     *                                      <li>Banco com o mesmo cnpj ja existente no banco de dados</li>
      *                                 </ul>
      */
     private void verificarSeBancoExiste(BancoCreateDTO bancoCreateDTO) throws RegraDeNegocioException {
@@ -77,9 +77,11 @@ public class BancoService {
      * Metodo para criar uma nova entidade de Banco
      *
      * @param bancoCreateDTO BancoCreateDTO
-     * @return {@link BancoDTO} bancoDTO
+     * @return {@link BancoCreateDTO} bancoCreateDTO
      * @throws RegraDeNegocioException - Caso o bancoCreateDTO possua informacoes iguais a algum outro banco que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
+     *@see BancoCreateDTO
+     *@see BancoDTO
      */
     public BancoDTO create(BancoCreateDTO bancoCreateDTO) throws RegraDeNegocioException {
 
@@ -95,13 +97,13 @@ public class BancoService {
     /**
      * Metodo para editar banco ja existente no Banco de dados
      *
-     * @param bancoCreateDTO BancoCreateDTO
+     * @param bancoCreateDTO bancoCreateDTO
      * @param idBanco        Integer
      * @return {@link BancoDTO} bancoDTO
      * @throws RegraDeNegocioException - Caso o bancoCreateDTO possua informacoes iguais a algum outro banco que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
+     * @see BancoCreateDTO
      */
-
     public BancoDTO update(Integer idBanco, BancoCreateDTO bancoCreateDTO) throws RegraDeNegocioException {
         Banco bancoRetorno = findById(idBanco);
 
@@ -125,8 +127,8 @@ public class BancoService {
      * @return {@link BancoDTO} bancoDTO
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
+     * @see BancoDTO
      */
-
     public BancoDTO bancoFindById(Integer idBanco) throws RegraDeNegocioException {
         Banco banco = findById(idBanco);
 
@@ -141,6 +143,7 @@ public class BancoService {
      * @return {@link BancoDTO} bancoDTO
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
+     * @see Banco
      */
     private Banco findById(Integer idBanco) throws RegraDeNegocioException {
         Optional<Banco> bancoRetorno = bancoRepository.findById(idBanco);

@@ -6,6 +6,7 @@ import br.com.fundatec.model.Agencia;
 import br.com.fundatec.model.Cliente;
 import br.com.fundatec.model.Conta;
 import br.com.fundatec.model.TipoConta;
+import br.com.fundatec.repository.AgenciaRepository;
 import br.com.fundatec.repository.ContaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,26 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * <h1> Classe ContaService</h1>
+ *
+ * <p> Classe responsavel pelo CRUD e por gerir as regras de negocio.</p>
+ * <p> Contem vinculo direto com ContaRepository para poder persistir as informacoes necessarias</p>
+ * <p>Possui os seguintes metodos</p>
+ * <ul>
+ *    <li>create - <b>public</b></li>
+ *    <li>update - <b>public</b></li>
+ *    <li>list -  <b>public</b></li>
+ *    <li>listByTipo -  <b>public</b></li>
+ *    <li>contaFindById - <b>public</b></li>
+ *    <li>delete - <b>public</b></li>
+ *    <li>findById - <b>private</b></li>
+ * </ul>
+ *
+ * @author Cailan Grott e Ricardo Langbecker
+ * @see ContaRepository
+ * @since 1.0
+ */
 @RequiredArgsConstructor
 @Service
 public class ContaService {
@@ -23,11 +44,23 @@ public class ContaService {
     private final AgenciaService agenciaService;
     private final ClienteService clienteService;
 
+    /**
+     * Metodo para criar uma nova entidade de Conta
+     *
+     * @param contaCreateDTO contaCreateDTO
+     * @param tipoConta tipoConta
+     * @return {@link ContaCreateDTO} contaCreateDTO
+     * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
+     *                                 ele lanca uma excecao, informando o motivo.
+     * @see ContaCreateDTO
+     * @see ContaDTO
+     * @see TipoConta
+     */
     public ContaDTO create(TipoConta tipoConta, ContaCreateDTO contaCreateDTO) throws RegraDeNegocioException {
-       Optional<Conta> contaFoundByNumero =contaRepository.findContaByNumero(contaCreateDTO.getNumero());
-       if(contaFoundByNumero.isPresent()){
-           throw  new RegraDeNegocioException("Conta com este numero já existe!");
-       }
+        Optional<Conta> contaFoundByNumero = contaRepository.findContaByNumero(contaCreateDTO.getNumero());
+        if (contaFoundByNumero.isPresent()) {
+            throw new RegraDeNegocioException("Conta com este numero já existe!");
+        }
 
         Conta conta = objectMapper.convertValue(contaCreateDTO, Conta.class);
         conta.setTipoConta(tipoConta);
@@ -43,6 +76,16 @@ public class ContaService {
         return contaDTO;
     }
 
+    /**
+     * Metodo para editar uma nova entidade de Conta
+     *
+     * @param contaCreateDTO contaCreateDTO
+     * @param id        Integer
+     * @return {@link ContaDTO} contaDTO
+     * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
+     *                                 ele lanca uma excecao, informando o motivo.
+     * @see ContaCreateDTO
+     */
     public ContaDTO update(Integer id, ContaCreateDTO contaCreateDTO, TipoConta tipoConta) throws RegraDeNegocioException {
         Conta conta = findById(id);
 
@@ -53,6 +96,11 @@ public class ContaService {
         return contaDTO;
     }
 
+    /**
+     * Metodo para buscar uma lista com todas as Contas existentes no Banco de dados
+     *
+     * @return {@link ContaDTO} contaDTO.
+     */
     public List<ContaDTO> list() {
 
 
@@ -85,6 +133,11 @@ public class ContaService {
         return listaDTO;
     }
 
+    /**
+     * Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados
+     *
+     * @return {@link ContaDTO} contaDTO.
+     */
     public List<ContaDTO> listByTipo(TipoConta tipoConta) {
         List<Conta> listAll = contaRepository.findAll();
         if (tipoConta == TipoConta.POUPANCA) {
@@ -134,6 +187,15 @@ public class ContaService {
 
     }
 
+    /**
+     * Metodo para buscar uma Conta por ID existente no Banco de dados
+     *
+     * @param id Integer
+     * @return {@link ContaDTO} contaDTO
+     * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
+     *                                 ele lança uma excecao, informando o motivo.
+     * @see ContaDTO
+     */
     public ContaDTO contaFindById(Integer id) throws RegraDeNegocioException {
         Conta conta = findById(id);
 
@@ -149,12 +211,28 @@ public class ContaService {
         return contaDTO;
     }
 
+    /**
+     * Metodo para deletar Conta por ID existente no Banco de dados
+     *
+     * @param id Integer
+     * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
+     *                                 ele lança uma excecao, informando o motivo.
+     */
     public void delete(Integer id) throws RegraDeNegocioException {
         Conta conta = findById(id);
 
         contaRepository.delete(conta);
     }
 
+    /**
+     * Metodo para buscar uma Conta por ID existente no Banco de dados
+     *
+     * @param idConta Integer
+     * @return {@link Conta} contaRetorno
+     * @throws RegraDeNegocioException -  Caso o ID informado nao exista no banco de dados
+     *                                 ele lanca uma excecao, informando o motivo.
+     * @see Conta
+     */
     private Conta findById(Integer idConta) throws RegraDeNegocioException {
         Optional<Conta> contaRetorno = contaRepository.findById(idConta);
 

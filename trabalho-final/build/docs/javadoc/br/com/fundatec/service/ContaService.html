@@ -134,6 +134,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>@Service
 public class <span class="typeNameLabel">ContaService</span>
 extends java.lang.Object</pre>
+<div class="block"><h1> Classe ContaService</h1>
+
+ <p> Classe responsÃ¡vel pelo CRUD e por gerir as regras de negocio.</p>
+ <p> Contem vinculo direto com ContaRepository para poder persistir as informaÃ§Ãµes necessÃ¡rias</p>
+ <p>Possui os seguintes mÃ©todos</p>
+ <ul>
+    <li>create - <b>public</b></li>
+    <li>update - <b>public</b></li>
+    <li>list -  <b>public</b></li>
+    <li>listByTipo -  <b>public</b></li>
+    <li>contaFindById - <b>public</b></li>
+    <li>delete - <b>public</b></li>
+    <li>findById - <b>private</b></li>
+ </ul></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../repository/AgenciaRepository.html" title="interface in br.com.fundatec.repository"><code>AgenciaRepository</code></a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -184,7 +204,9 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(br.com.fundatec.model.TipoConta,br.com.fundatec.dto.ContaCreateDTO)">create</a></span>&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta,
       <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">MÃ©todo para criar uma nova entidade de AgÃªncia</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -260,9 +282,20 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&nbsp;create&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta,
                        <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)
                 throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">MÃ©todo para criar uma nova entidade de AgÃªncia</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>contaCreateDTO</code> - contaCreateDTO</dd>
+<dd><code>tipoConta</code> - tipoConta</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a> contaCreateDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informaÃ§Ãµes iguais a alguma outra agÃªncia que exista no banco de dados
+                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a>, 
+<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a>, 
+<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model"><code>TipoConta</code></a></dd>
 </dl>
 </li>
 </ul>

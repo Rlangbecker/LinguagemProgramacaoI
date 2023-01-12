@@ -17,10 +17,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * <h1> Classe AgenciaServiec</h1>
+ * <h1> Classe AgenciaService</h1>
  *
  * <p> Classe responsavel pelo CRUD e por gerir as regras de negocio.</p>
- * <p> Contem vinculo direto com AgenciaRepository para poder persistir as informações necessáras</p>
+ * <p> Contem vinculo direto com AgenciaRepository para poder persistir as informacoes necessarias</p>
  * <p>Possui os seguintes metodos</p>
  * <ul>
  *    <li>verificarSeAgenciaExiste - <b>private</b></li>
@@ -39,21 +39,18 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class AgenciaService {
-
     private final AgenciaRepository agenciaRepository;
-
     private final BancoService bancoService;
     private final ObjectMapper objectMapper;
 
-
     /**
-     * Metodo para verificar se há tentativa de duplicidade no Banco de dados
+     * Metodo para verificar se ha tentativa de duplicidade no Banco de dados
      *
      * @param agenciaCreateDTO AgenciaCreateDTO
      * @return {@link Void} void
      * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agencia que exista no banco de dados
-     *                                 ele lança uma excecao, informando o motivo.
-     *                                 <p>Motivos para lancar a excecao: </p>
+     *                                 ele lança uma exceção, informando o motivo.
+     *                                 <p>Motivos para lançar a exceção: </p>
      *                                   <ul>
      *                                      <li>Agencia com o mesmo nome já existente no banco de dados</li>
      *                                      <li>Agencia com o mesmo numero já existente no banco de dados</li>
@@ -78,7 +75,6 @@ public class AgenciaService {
      * @return {@link AgenciaCreateDTO} agenciaCreateDTO
      * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agencia que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
-     *
      * @see AgenciaCreateDTO
      * @see AgenciaDTO
      */
@@ -99,16 +95,14 @@ public class AgenciaService {
         return agenciaDTO;
     }
 
-
     /**
      * Metodo para editar uma nova entidade de Agencia
      *
      * @param agenciaUpdateDTO agenciaUpdateDTO
-     * @param idAgencia Integer
+     * @param idAgencia        Integer
      * @return {@link AgenciaDTO} agenciaDTO
-     * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agencia que exista no banco de dados
+     * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agência que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
-     *
      * @see AgenciaUpdateDTO
      */
     public AgenciaDTO update(Integer idAgencia, AgenciaUpdateDTO agenciaUpdateDTO) throws RegraDeNegocioException {
@@ -133,9 +127,8 @@ public class AgenciaService {
      *
      * @param idAgencia Integer
      * @return {@link AgenciaDTO} agenciaDTO
-     * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agencia que exista no banco de dados
-     *                                 ele lanca uma excecao, informando o motivo.
-     *
+     * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
+     *                                 ele lança uma excecao, informando o motivo.
      * @see AgenciaDTO
      */
     public AgenciaDTO agenciaFindById(Integer idAgencia) throws RegraDeNegocioException {
@@ -150,15 +143,13 @@ public class AgenciaService {
         return agenciaDTO;
     }
 
-
     /**
      * Metodo para buscar uma Agencia por ID existente no Banco de dados
      *
      * @param idAgencia Integer
      * @return {@link Agencia} agenciaRetorno
      * @throws RegraDeNegocioException -  Caso o ID informado nao exista no banco de dados
-     *                                     ele lanca uma excecao, informando o motivo.
-     *
+     *                                 ele lança uma exceção, informando o motivo.
      * @see Agencia
      */
     private Agencia findById(Integer idAgencia) throws RegraDeNegocioException {

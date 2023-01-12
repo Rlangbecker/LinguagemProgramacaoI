@@ -14,50 +14,55 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ *
+ *
+ *
+ *
+ */
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/agencia")
 public class AgenciaController {
-
     private final AgenciaService agenciaService;
 
     @Operation(summary = "Criar agencia", description = "Criar agencia")
     @PostMapping
-    public ResponseEntity<AgenciaDTO> create (@RequestBody AgenciaCreateDTO agenciaCreateDTO) throws RegraDeNegocioException {
-       AgenciaDTO agenciaDTO = agenciaService.create(agenciaCreateDTO);
+    public ResponseEntity<AgenciaDTO> create(@RequestBody AgenciaCreateDTO agenciaCreateDTO) throws RegraDeNegocioException {
+        AgenciaDTO agenciaDTO = agenciaService.create(agenciaCreateDTO);
 
-       return new ResponseEntity<>(agenciaDTO, HttpStatus.OK);
+        return new ResponseEntity<>(agenciaDTO, HttpStatus.OK);
     }
 
-    @Operation(summary = "Listar agencias",description = "Retorna uma lista de todas as agencias do banco")
+    @Operation(summary = "Listar agencias", description = "Retorna uma lista de todas as agencias do banco")
     @GetMapping
-    public ResponseEntity<List<AgenciaDTO>> list(){
-      List<AgenciaDTO> lista = agenciaService.list();
-    return new ResponseEntity<>(lista,HttpStatus.OK);
+    public ResponseEntity<List<AgenciaDTO>> list() {
+        List<AgenciaDTO> lista = agenciaService.list();
+        return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
     @Operation(summary = "Buscar agencia", description = "Retorna agencia pelo ID inserido")
     @GetMapping("/find-by-id")
     public ResponseEntity<AgenciaDTO> findById(@RequestParam Integer idAgencia) throws RegraDeNegocioException {
-       AgenciaDTO agenciaDTO= agenciaService.agenciaFindById(idAgencia);
+        AgenciaDTO agenciaDTO = agenciaService.agenciaFindById(idAgencia);
 
-    return new ResponseEntity<>(agenciaDTO,HttpStatus.OK);
+        return new ResponseEntity<>(agenciaDTO, HttpStatus.OK);
     }
 
 
     @Operation(summary = "Editar agencia", description = "Edita uma agencia pelo ID inserido")
     @PutMapping("/update")
-    public ResponseEntity<AgenciaDTO> update (@RequestParam Integer idAgencia, @RequestBody AgenciaUpdateDTO agenciaUpdateDTO) throws RegraDeNegocioException {
-      AgenciaDTO agenciaDTO = agenciaService.update(idAgencia,agenciaUpdateDTO);
+    public ResponseEntity<AgenciaDTO> update(@RequestParam Integer idAgencia, @RequestBody AgenciaUpdateDTO agenciaUpdateDTO) throws RegraDeNegocioException {
+        AgenciaDTO agenciaDTO = agenciaService.update(idAgencia, agenciaUpdateDTO);
 
-    return new ResponseEntity<>(agenciaDTO,HttpStatus.OK);
+        return new ResponseEntity<>(agenciaDTO, HttpStatus.OK);
     }
 
-    @Operation(summary = "Deletar agencia",description = "Deleta uma agencia pelo ID inserido")
+    @Operation(summary = "Deletar agencia", description = "Deleta uma agencia pelo ID inserido")
     @DeleteMapping
-    public ResponseEntity<Void> delete (@RequestParam Integer idAgencia) throws RegraDeNegocioException {
+    public ResponseEntity<Void> delete(@RequestParam Integer idAgencia) throws RegraDeNegocioException {
         agenciaService.delete(idAgencia);
 
-        return new ResponseEntity<>(null,HttpStatus.OK);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
