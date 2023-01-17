@@ -114,6 +114,7 @@ public class BancoController {
      * Metodo para deletar banco por ID existente no Banco de dados
      *
      * @param idBanco Integer
+     * @return {@link Void} void
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
      */

@@ -136,9 +136,9 @@ public class <span class="typeNameLabel">ContaService</span>
 extends java.lang.Object</pre>
 <div class="block"><h1> Classe ContaService</h1>
 
- <p> Classe responsÃ¡vel pelo CRUD e por gerir as regras de negocio.</p>
- <p> Contem vinculo direto com ContaRepository para poder persistir as informaÃ§Ãµes necessÃ¡rias</p>
- <p>Possui os seguintes mÃ©todos</p>
+ <p> Classe responsavel pelo CRUD e por gerir as regras de negocio.</p>
+ <p> Contem vinculo direto com ContaRepository para poder persistir as informacoes necessarias</p>
+ <p>Possui os seguintes metodos</p>
  <ul>
     <li>create - <b>public</b></li>
     <li>update - <b>public</b></li>
@@ -152,7 +152,7 @@ extends java.lang.Object</pre>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../repository/AgenciaRepository.html" title="interface in br.com.fundatec.repository"><code>AgenciaRepository</code></a></dd>
+<dd><a href="../repository/ContaRepository.html" title="interface in br.com.fundatec.repository"><code>ContaRepository</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -198,37 +198,47 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#contaFindById(java.lang.Integer)">contaFindById</a></span>&#8203;(java.lang.Integer&nbsp;id)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma Conta por ID existente no Banco de dados</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(br.com.fundatec.model.TipoConta,br.com.fundatec.dto.ContaCreateDTO)">create</a></span>&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta,
       <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para criar uma nova entidade de AgÃªncia</div>
+<div class="block">Metodo para criar uma nova entidade de Conta</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Integer)">delete</a></span>&#8203;(java.lang.Integer&nbsp;id)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para deletar Conta por ID existente no Banco de dados</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list()">list</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma lista com todas as Contas existentes no Banco de dados</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listByTipo(br.com.fundatec.model.TipoConta)">listByTipo</a></span>&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Integer,br.com.fundatec.dto.ContaCreateDTO,br.com.fundatec.model.TipoConta)">update</a></span>&#8203;(java.lang.Integer&nbsp;id,
       <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO,
       <a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para editar uma nova entidade de Conta</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -282,7 +292,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&nbsp;create&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta,
                        <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)
                 throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para criar uma nova entidade de AgÃªncia</div>
+<div class="block">Metodo para criar uma nova entidade de Conta</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>contaCreateDTO</code> - contaCreateDTO</dd>
@@ -290,8 +300,8 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a> contaCreateDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informaÃ§Ãµes iguais a alguma outra agÃªncia que exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a>, 
 <a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a>, 
@@ -309,9 +319,19 @@ extends java.lang.Object</pre>
                        <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO,
                        <a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta)
                 throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para editar uma nova entidade de Conta</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>contaCreateDTO</code> - contaCreateDTO</dd>
+<dd><code>id</code> - Integer</dd>
+<dd><code>tipoConta</code> - TipoConta</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -322,6 +342,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>list</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&nbsp;list()</pre>
+<div class="block">Metodo para buscar uma lista com todas as Contas existentes no Banco de dados</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO.</dd>
+</dl>
 </li>
 </ul>
 <a id="listByTipo(br.com.fundatec.model.TipoConta)">
@@ -331,6 +356,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>listByTipo</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&nbsp;listByTipo&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta)</pre>
+<div class="block">Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tipoConta</code> - TipoConta</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO.</dd>
+</dl>
 </li>
 </ul>
 <a id="contaFindById(java.lang.Integer)">
@@ -341,9 +373,17 @@ extends java.lang.Object</pre>
 <h4>contaFindById</h4>
 <pre class="methodSignature">public&nbsp;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&nbsp;contaFindById&#8203;(java.lang.Integer&nbsp;id)
                        throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para buscar uma Conta por ID existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>id</code> - Integer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -355,9 +395,13 @@ extends java.lang.Object</pre>
 <h4>delete</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;delete&#8203;(java.lang.Integer&nbsp;id)
             throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para deletar Conta por ID existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>id</code> - Integer</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma excecao, informando o motivo.</dd>
 </dl>
 </li>
 </ul>

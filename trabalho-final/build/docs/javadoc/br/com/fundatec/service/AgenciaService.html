@@ -136,9 +136,9 @@ public class <span class="typeNameLabel">AgenciaService</span>
 extends java.lang.Object</pre>
 <div class="block"><h1> Classe AgenciaService</h1>
 
- <p> Classe responsÃ¡vel pelo CRUD e por gerir as regras de negocio.</p>
- <p> Contem vinculo direto com AgenciaRepository para poder persistir as informaÃ§Ãµes necessÃ¡rias</p>
- <p>Possui os seguintes mÃ©todos</p>
+ <p> Classe responsavel pelo CRUD e por gerir as regras de negocio.</p>
+ <p> Contem vinculo direto com AgenciaRepository para poder persistir as informacoes necessarias</p>
+ <p>Possui os seguintes metodos</p>
  <ul>
     <li>verificarSeAgenciaExiste - <b>private</b></li>
     <li>create - <b>public</b></li>
@@ -199,28 +199,28 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#agenciaFindById(java.lang.Integer)">agenciaFindById</a></span>&#8203;(java.lang.Integer&nbsp;idAgencia)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para buscar uma AgÃªncia por ID existente no Banco de dados</div>
+<div class="block">Metodo para buscar uma Agencia por ID existente no Banco de dados</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(br.com.fundatec.dto.AgenciaCreateDTO)">create</a></span>&#8203;(<a href="../dto/AgenciaCreateDTO.html" title="class in br.com.fundatec.dto">AgenciaCreateDTO</a>&nbsp;agenciaCreateDTO)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para criar uma nova entidade de AgÃªncia</div>
+<div class="block">Metodo para criar uma nova entidade de Agencia</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Integer)">delete</a></span>&#8203;(java.lang.Integer&nbsp;idAgencia)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para deletar Agencia por ID existente no Banco de dados</div>
+<div class="block">Metodo para deletar Agencia por ID existente no Banco de dados</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list()">list</a></span>()</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para buscar uma lista com todas as AgÃªncias existentes no Banco de dados</div>
+<div class="block">Metodo para buscar uma lista com todas as Agencias existentes no Banco de dados</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -228,7 +228,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Integer,br.com.fundatec.dto.AgenciaUpdateDTO)">update</a></span>&#8203;(java.lang.Integer&nbsp;idAgencia,
       <a href="../dto/AgenciaUpdateDTO.html" title="class in br.com.fundatec.dto">AgenciaUpdateDTO</a>&nbsp;agenciaUpdateDTO)</code></th>
 <td class="colLast">
-<div class="block">Metodo para editar uma nova entidade de AgÃªncia</div>
+<div class="block">Metodo para editar uma nova entidade de Agencia</div>
 </td>
 </tr>
 </table>
@@ -282,15 +282,15 @@ extends java.lang.Object</pre>
 <h4>create</h4>
 <pre class="methodSignature">public&nbsp;<a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a>&nbsp;create&#8203;(<a href="../dto/AgenciaCreateDTO.html" title="class in br.com.fundatec.dto">AgenciaCreateDTO</a>&nbsp;agenciaCreateDTO)
                   throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para criar uma nova entidade de AgÃªncia</div>
+<div class="block">Metodo para criar uma nova entidade de Agencia</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>agenciaCreateDTO</code> - agenciaCreateDTO</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/AgenciaCreateDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaCreateDTO</code></a> agenciaCreateDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informaÃ§Ãµes iguais a alguma outra agÃªncia que exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agencia que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../dto/AgenciaCreateDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaCreateDTO</code></a>, 
 <a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaDTO</code></a></dd>
@@ -306,7 +306,7 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a>&nbsp;update&#8203;(java.lang.Integer&nbsp;idAgencia,
                          <a href="../dto/AgenciaUpdateDTO.html" title="class in br.com.fundatec.dto">AgenciaUpdateDTO</a>&nbsp;agenciaUpdateDTO)
                   throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">Metodo para editar uma nova entidade de AgÃªncia</div>
+<div class="block">Metodo para editar uma nova entidade de Agencia</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>agenciaUpdateDTO</code> - agenciaUpdateDTO</dd>
@@ -314,8 +314,8 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaDTO</code></a> agenciaDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informaÃ§Ãµes iguais a alguma outra agÃªncia que exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra agÃªncia que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../dto/AgenciaUpdateDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaUpdateDTO</code></a></dd>
 </dl>
@@ -329,15 +329,15 @@ extends java.lang.Object</pre>
 <h4>agenciaFindById</h4>
 <pre class="methodSignature">public&nbsp;<a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a>&nbsp;agenciaFindById&#8203;(java.lang.Integer&nbsp;idAgencia)
                            throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para buscar uma AgÃªncia por ID existente no Banco de dados</div>
+<div class="block">Metodo para buscar uma Agencia por ID existente no Banco de dados</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>idAgencia</code> - Integer</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaDTO</code></a> agenciaDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informaÃ§Ãµes iguais a alguma outra agÃªncia que exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma excecao, informando o motivo.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaDTO</code></a></dd>
 </dl>
@@ -350,7 +350,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>list</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto">AgenciaDTO</a>&gt;&nbsp;list()</pre>
-<div class="block">MÃ©todo para buscar uma lista com todas as AgÃªncias existentes no Banco de dados</div>
+<div class="block">Metodo para buscar uma lista com todas as Agencias existentes no Banco de dados</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/AgenciaDTO.html" title="class in br.com.fundatec.dto"><code>AgenciaDTO</code></a> agenciaDTO.</dd>
@@ -365,13 +365,13 @@ extends java.lang.Object</pre>
 <h4>delete</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;delete&#8203;(java.lang.Integer&nbsp;idAgencia)
             throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para deletar Agencia por ID existente no Banco de dados</div>
+<div class="block">Metodo para deletar Agencia por ID existente no Banco de dados</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>idAgencia</code> - Integer</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+                                 ele lanca uma excecao, informando o motivo.</dd>
 </dl>
 </li>
 </ul>

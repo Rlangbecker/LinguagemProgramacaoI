@@ -199,28 +199,28 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#bancoFindById(java.lang.Integer)">bancoFindById</a></span>&#8203;(java.lang.Integer&nbsp;idBanco)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para buscar banco por ID existente no Banco de dados</div>
+<div class="block">Metodo para buscar banco por ID existente no Banco de dados</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(br.com.fundatec.dto.BancoCreateDTO)">create</a></span>&#8203;(<a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto">BancoCreateDTO</a>&nbsp;bancoCreateDTO)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para criar uma nova entidade de Banco</div>
+<div class="block">Metodo para criar uma nova entidade de Banco</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Integer)">delete</a></span>&#8203;(java.lang.Integer&nbsp;idBanco)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para deletar banco por ID existente no Banco de dados</div>
+<div class="block">Metodo para deletar banco por ID existente no Banco de dados</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list()">list</a></span>()</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para buscar uma lista com todos os bancos existentes no Banco de dados</div>
+<div class="block">Metodo para buscar uma lista com todos os bancos existentes no Banco de dados</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -228,7 +228,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Integer,br.com.fundatec.dto.BancoCreateDTO)">update</a></span>&#8203;(java.lang.Integer&nbsp;idBanco,
       <a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto">BancoCreateDTO</a>&nbsp;bancoCreateDTO)</code></th>
 <td class="colLast">
-<div class="block">MÃ©todo para editar banco ja existente no Banco de dados</div>
+<div class="block">Metodo para editar banco ja existente no Banco de dados</div>
 </td>
 </tr>
 </table>
@@ -282,15 +282,18 @@ extends java.lang.Object</pre>
 <h4>create</h4>
 <pre class="methodSignature">public&nbsp;<a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a>&nbsp;create&#8203;(<a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto">BancoCreateDTO</a>&nbsp;bancoCreateDTO)
                 throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para criar uma nova entidade de Banco</div>
+<div class="block">Metodo para criar uma nova entidade de Banco</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>bancoCreateDTO</code> - BancoCreateDTO</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto"><code>BancoDTO</code></a> bancoDTO</dd>
+<dd><a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto"><code>BancoCreateDTO</code></a> bancoCreateDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o bancoCreateDTO possua informaÃ§Ãµes iguais a algum outro banco que exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o bancoCreateDTO possua informacoes iguais a algum outro banco que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto"><code>BancoCreateDTO</code></a>, 
+<a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto"><code>BancoDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -303,16 +306,18 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;<a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a>&nbsp;update&#8203;(java.lang.Integer&nbsp;idBanco,
                        <a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto">BancoCreateDTO</a>&nbsp;bancoCreateDTO)
                 throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para editar banco ja existente no Banco de dados</div>
+<div class="block">Metodo para editar banco ja existente no Banco de dados</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>bancoCreateDTO</code> - BancoCreateDTO</dd>
+<dd><code>bancoCreateDTO</code> - bancoCreateDTO</dd>
 <dd><code>idBanco</code> - Integer</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto"><code>BancoDTO</code></a> bancoDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o bancoCreateDTO possua informaÃ§Ãµes iguais a algum outro banco que exista no banco de dados
-                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o bancoCreateDTO possua informacoes iguais a algum outro banco que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/BancoCreateDTO.html" title="class in br.com.fundatec.dto"><code>BancoCreateDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -324,7 +329,7 @@ extends java.lang.Object</pre>
 <h4>bancoFindById</h4>
 <pre class="methodSignature">public&nbsp;<a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a>&nbsp;bancoFindById&#8203;(java.lang.Integer&nbsp;idBanco)
                        throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para buscar banco por ID existente no Banco de dados</div>
+<div class="block">Metodo para buscar banco por ID existente no Banco de dados</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>idBanco</code> - Integer</dd>
@@ -333,6 +338,8 @@ extends java.lang.Object</pre>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
                                  ele lanca uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto"><code>BancoDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -343,7 +350,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>list</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto">BancoDTO</a>&gt;&nbsp;list()</pre>
-<div class="block">MÃ©todo para buscar uma lista com todos os bancos existentes no Banco de dados</div>
+<div class="block">Metodo para buscar uma lista com todos os bancos existentes no Banco de dados</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd><a href="../dto/BancoDTO.html" title="class in br.com.fundatec.dto"><code>BancoDTO</code></a> bancoDTO.</dd>
@@ -358,7 +365,7 @@ extends java.lang.Object</pre>
 <h4>delete</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;delete&#8203;(java.lang.Integer&nbsp;idBanco)
             throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
-<div class="block">MÃ©todo para deletar banco por ID existente no Banco de dados</div>
+<div class="block">Metodo para deletar banco por ID existente no Banco de dados</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>idBanco</code> - Integer</dd>

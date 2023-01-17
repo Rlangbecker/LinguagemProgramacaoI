@@ -104,6 +104,7 @@ public class ClienteController {
      * Metodo para deletar Cliente por ID existente no Banco de dados
      *
      * @param idCliente Integer
+     * @return {@link Void} void
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lança uma exceção, informando o motivo.
      */

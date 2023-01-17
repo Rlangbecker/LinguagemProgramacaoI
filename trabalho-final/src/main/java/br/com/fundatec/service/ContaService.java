@@ -81,6 +81,7 @@ public class ContaService {
      *
      * @param contaCreateDTO contaCreateDTO
      * @param id             Integer
+     * @param tipoConta      TipoConta
      * @return {@link ContaDTO} contaDTO
      * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
@@ -136,6 +137,7 @@ public class ContaService {
     /**
      * Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados
      *
+     * @param tipoConta TipoConta
      * @return {@link ContaDTO} contaDTO.
      */
     public List<ContaDTO> listByTipo(TipoConta tipoConta) {

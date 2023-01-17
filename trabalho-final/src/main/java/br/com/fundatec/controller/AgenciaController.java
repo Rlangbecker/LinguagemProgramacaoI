@@ -109,6 +109,7 @@ public class AgenciaController {
      * Metodo para deletar Agencia por ID existente no Banco de dados
      *
      * @param idAgencia Integer
+     * @return {@link Void} void
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
      */

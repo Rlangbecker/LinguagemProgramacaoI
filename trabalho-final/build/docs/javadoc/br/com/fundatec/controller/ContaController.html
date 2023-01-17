@@ -135,6 +135,27 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 @RequestMapping("/conta")
 public class <span class="typeNameLabel">ContaController</span>
 extends java.lang.Object</pre>
+<div class="block"><h1> Classe ContaController</h1>
+
+ <p> Classe responsavel por intermediar as requisicoes enviadas pelo View com as respostas fornecidas pelo Model,
+ processando os dados que o usuario informou e repassando para outras camadas.</p>
+ <p>Possui as seguintes propriedades: </p>
+ <ul>
+    <li>contaService - ContaService </li>
+    <li>create - <b>public</b></li>
+    <li>list - <b>public</b></li>
+    <li>findById - <b>public</b></li>
+    <li>listByTipoConta - <b>public</b></li>
+    <li>update - <b>public</b></li>
+    <li>delete - <b>public</b></li>
+
+ </ul></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../service/ContaService.html" title="class in br.com.fundatec.service"><code>ContaService</code></a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -180,34 +201,47 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(br.com.fundatec.model.TipoConta,br.com.fundatec.dto.ContaCreateDTO)">create</a></span>&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta,
       <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para criar uma nova entidade de Conta
+ Metodo usa verbo HTTP Post</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;java.lang.Void&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Integer)">delete</a></span>&#8203;(java.lang.Integer&nbsp;idConta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para deletar Conta por ID existente no Banco de dados</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findById(java.lang.Integer)">findById</a></span>&#8203;(java.lang.Integer&nbsp;idConta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma Conta por ID existente no Banco de dados</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list()">list</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma lista com todas as Contas existentes no Banco de dados</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listByTipoConta(br.com.fundatec.model.TipoConta)">listByTipoConta</a></span>&#8203;(<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Integer,br.com.fundatec.model.TipoConta,br.com.fundatec.dto.ContaCreateDTO)">update</a></span>&#8203;(java.lang.Integer&nbsp;idConta,
       <a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta,
       <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para editar uma nova entidade de Conta</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -264,9 +298,21 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.
                                                                 @RequestBody
                                                                 <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)
                                                          throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para criar uma nova entidade de Conta
+ Metodo usa verbo HTTP Post</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>contaCreateDTO</code> - contaCreateDTO</dd>
+<dd><code>tipoConta</code> - tipoConta</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a> contaCreateDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a>, 
+<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a>, 
+<a href="../model/TipoConta.html" title="enum in br.com.fundatec.model"><code>TipoConta</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -278,6 +324,11 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.
 <h4>list</h4>
 <pre class="methodSignature">@GetMapping
 public&nbsp;org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&gt;&nbsp;list()</pre>
+<div class="block">Metodo para buscar uma lista com todas as Contas existentes no Banco de dados</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO.</dd>
+</dl>
 </li>
 </ul>
 <a id="findById(java.lang.Integer)">
@@ -290,9 +341,17 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href
 public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&nbsp;findById&#8203;(@RequestParam
                                                                   java.lang.Integer&nbsp;idConta)
                                                            throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para buscar uma Conta por ID existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>idConta</code> - Integer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -306,9 +365,15 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.
 public&nbsp;org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto">ContaDTO</a>&gt;&gt;&nbsp;listByTipoConta&#8203;(@RequestParam
                                                                                          <a href="../model/TipoConta.html" title="enum in br.com.fundatec.model">TipoConta</a>&nbsp;tipoConta)
                                                                                   throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>tipoConta</code> - TipoConta</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - -  Caso o ID informado nao exista no banco de dados
+                                      ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
 </dl>
 </li>
 </ul>
@@ -326,9 +391,19 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.
                                                                 @RequestBody
                                                                 <a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto">ContaCreateDTO</a>&nbsp;contaCreateDTO)
                                                          throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para editar uma nova entidade de Conta</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>contaCreateDTO</code> - contaCreateDTO</dd>
+<dd><code>idConta</code> - Integer</dd>
+<dd><code>tipoConta</code> - TipoConta</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ContaDTO.html" title="class in br.com.fundatec.dto"><code>ContaDTO</code></a> contaDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../dto/ContaCreateDTO.html" title="class in br.com.fundatec.dto"><code>ContaCreateDTO</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -342,9 +417,15 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ContaDTO.
 public&nbsp;org.springframework.http.ResponseEntity&lt;java.lang.Void&gt;&nbsp;delete&#8203;(@RequestParam
                                                                       java.lang.Integer&nbsp;idConta)
                                                                throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para deletar Conta por ID existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>idConta</code> - Integer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>Void</code> void</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma excecao, informando o motivo.</dd>
 </dl>
 </li>
 </ul>

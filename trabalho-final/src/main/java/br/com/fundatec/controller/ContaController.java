@@ -95,7 +95,10 @@ public class ContaController {
     /**
      * Metodo para buscar uma lista com os tipos de Conta existentes no Banco de dados
      *
+     * @param tipoConta TipoConta
      * @return {@link ContaDTO} contaDTO.
+     * @throws RegraDeNegocioException -  Caso o ID informado nao exista no banco de dados
+     *                                      ele lança uma exceção, informando o motivo.
      */
     @Operation(summary = "Listar todas contas pelo TIPO", description = "Retorna uma lista com todas contas pelo TIPO")
     @GetMapping("/list-by-tipo-conta")
@@ -109,6 +112,7 @@ public class ContaController {
      *
      * @param contaCreateDTO contaCreateDTO
      * @param idConta        Integer
+     * @param tipoConta      TipoConta
      * @return {@link ContaDTO} contaDTO
      * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
@@ -125,6 +129,7 @@ public class ContaController {
      * Metodo para deletar Conta por ID existente no Banco de dados
      *
      * @param idConta Integer
+     * @return {@link Void} void
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lança uma excecao, informando o motivo.
      */

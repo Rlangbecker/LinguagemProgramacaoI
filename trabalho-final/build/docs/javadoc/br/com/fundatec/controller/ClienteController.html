@@ -135,6 +135,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 @RequestMapping("/cliente")
 public class <span class="typeNameLabel">ClienteController</span>
 extends java.lang.Object</pre>
+<div class="block"><h1> Classe ClienteController</h1>
+
+ <p> Classe responsavel pelo CRUD e por gerir as regras de negocio.</p>
+ <p> Contem vinculo direto com AgenciaRepository para poder persistir as informacoes necessarias</p>
+ <p>Possui os seguintes metodos</p>
+ <ul>
+    <li>verificarSeAgenciaExiste - <b>private</b></li>
+    <li>create - <b>public</b></li>
+    <li>update - <b>public</b></li>
+    <li>agenciaFindById - <b>public</b></li>
+    <li>findById - <b>private</b></li>
+    <li>list -  <b>public</b></li>
+    <li>delete - <b>public</b></li>
+ </ul></div>
+<dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../service/ClienteService.html" title="class in br.com.fundatec.service"><code>ClienteService</code></a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -179,28 +199,38 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#create(br.com.fundatec.dto.ClienteCreateDTO)">create</a></span>&#8203;(<a href="../dto/ClienteCreateDTO.html" title="class in br.com.fundatec.dto">ClienteCreateDTO</a>&nbsp;clienteCreateDTO)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para criar uma nova entidade de Cliente</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;java.lang.Void&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delete(java.lang.Integer)">delete</a></span>&#8203;(java.lang.Integer&nbsp;idCliente)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para deletar Cliente por ID existente no Banco de dados</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findById(java.lang.Integer)">findById</a></span>&#8203;(java.lang.Integer&nbsp;idCliente)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar um Cliente por ID existente no Banco de dados</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#list()">list</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para buscar uma lista com todos os Clientes existentes no Banco de dados</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(java.lang.Integer,br.com.fundatec.dto.ClienteCreateDTO)">update</a></span>&#8203;(java.lang.Integer&nbsp;idCliente,
       <a href="../dto/ClienteCreateDTO.html" title="class in br.com.fundatec.dto">ClienteCreateDTO</a>&nbsp;clienteCreateDTO)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Metodo para editar Cliente ja existente no Banco de dados</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -255,9 +285,15 @@ extends java.lang.Object</pre>
 public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;&nbsp;create&#8203;(@RequestBody
                                                                   <a href="../dto/ClienteCreateDTO.html" title="class in br.com.fundatec.dto">ClienteCreateDTO</a>&nbsp;clienteCreateDTO)
                                                            throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para criar uma nova entidade de Cliente</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>clienteCreateDTO</code> - clienteCreateDTO</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ClienteCreateDTO.html" title="class in br.com.fundatec.dto"><code>ClienteCreateDTO</code></a> clienteCreateDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o clienteCreateDTO possua informacoes iguais a algum outro cliente que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
 </dl>
 </li>
 </ul>
@@ -269,6 +305,11 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDT
 <h4>list</h4>
 <pre class="methodSignature">@GetMapping
 public&nbsp;org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;&gt;&nbsp;list()</pre>
+<div class="block">Metodo para buscar uma lista com todos os Clientes existentes no Banco de dados</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto"><code>ClienteDTO</code></a> clienteDTO.</dd>
+</dl>
 </li>
 </ul>
 <a id="findById(java.lang.Integer)">
@@ -281,9 +322,17 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;java.util.List&lt;<a href
 public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto">ClienteDTO</a>&gt;&nbsp;findById&#8203;(@RequestParam
                                                                     java.lang.Integer&nbsp;idCliente)
                                                              throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para buscar um Cliente por ID existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>idCliente</code> - Integer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../model/Cliente.html" title="class in br.com.fundatec.model"><code>Cliente</code></a> clienteRetorno</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - -  Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../model/Cliente.html" title="class in br.com.fundatec.model"><code>Cliente</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -299,9 +348,16 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDT
                                                                   @RequestBody
                                                                   <a href="../dto/ClienteCreateDTO.html" title="class in br.com.fundatec.dto">ClienteCreateDTO</a>&nbsp;clienteCreateDTO)
                                                            throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para editar Cliente ja existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>clienteCreateDTO</code> - clienteCreateDTO</dd>
+<dd><code>idCliente</code> - Integer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><a href="../dto/ClienteDTO.html" title="class in br.com.fundatec.dto"><code>ClienteDTO</code></a> clienteDTO</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o clienteCreateDTO possua informacoes iguais a algum outro cliente que exista no banco de dados
+                                 ele lanca uma excecao, informando o motivo.</dd>
 </dl>
 </li>
 </ul>
@@ -315,9 +371,15 @@ public&nbsp;org.springframework.http.ResponseEntity&lt;<a href="../dto/ClienteDT
 public&nbsp;org.springframework.http.ResponseEntity&lt;java.lang.Void&gt;&nbsp;delete&#8203;(@RequestParam
                                                                       java.lang.Integer&nbsp;idCliente)
                                                                throws <a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></pre>
+<div class="block">Metodo para deletar Cliente por ID existente no Banco de dados</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>idCliente</code> - Integer</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd><code>Void</code> void</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code></dd>
+<dd><code><a href="../Exception/RegraDeNegocioException.html" title="class in br.com.fundatec.Exception">RegraDeNegocioException</a></code> - - Caso o ID informado nao exista no banco de dados
+                                 ele lanÃ§a uma exceÃ§Ã£o, informando o motivo.</dd>
 </dl>
 </li>
 </ul>
