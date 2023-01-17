@@ -50,7 +50,7 @@ public class Cliente {
     @Column(name = "nome")
     private String nome;
 
-    @OneToOne(fetch =FetchType.LAZY, cascade =CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("cliente")
     private Conta conta;
 

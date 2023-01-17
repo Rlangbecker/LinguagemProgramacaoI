@@ -38,7 +38,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class ClienteService {
-
     private final ObjectMapper objectMapper;
     private final ClienteRepository clienteRepository;
 
@@ -73,7 +72,6 @@ public class ClienteService {
      * @throws RegraDeNegocioException - Caso o clienteCreateDTO possua informacoes iguais a algum outro cliente que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
      */
-
     public ClienteDTO update(Integer id, ClienteCreateDTO clienteCreateDTO) throws RegraDeNegocioException {
         Cliente cliente = findById(id);
 
@@ -89,7 +87,6 @@ public class ClienteService {
      *
      * @return {@link ClienteDTO} clienteDTO.
      */
-
     public List<ClienteDTO> list() {
         return clienteRepository.findAll().stream()
                 .map(cliente -> objectMapper.convertValue(cliente, ClienteDTO.class))
@@ -104,7 +101,6 @@ public class ClienteService {
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lança uma exceção, informando o motivo.
      */
-
     public ClienteDTO clienteFindById(Integer id) throws RegraDeNegocioException {
         Cliente cliente = findById(id);
 
@@ -123,7 +119,6 @@ public class ClienteService {
      * @throws RegraDeNegocioException - Caso o ID informado nao exista no banco de dados
      *                                 ele lança uma exceção, informando o motivo.
      */
-
     public void delete(Integer id) throws RegraDeNegocioException {
         Cliente cliente = findById(id);
 
@@ -139,7 +134,6 @@ public class ClienteService {
      *                                 ele lança uma exceção, informando o motivo.
      * @see Cliente
      */
-
     private Cliente findById(Integer idCliente) throws RegraDeNegocioException {
         Optional<Cliente> clienteRetorno = clienteRepository.findById(idCliente);
         if (clienteRetorno.isEmpty()) {

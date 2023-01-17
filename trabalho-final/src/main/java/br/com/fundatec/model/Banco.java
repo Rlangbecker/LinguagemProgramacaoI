@@ -48,13 +48,13 @@ public class Banco {
     @Column(name = "codigo")
     private Integer codigo;
 
-    @Column(name ="nome")
+    @Column(name = "nome")
     private String nome;
 
     @Column(name = "cnpj")
     private String cnpj;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "banco", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "banco", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("banco")
     private Set<Agencia> agencias;
 }

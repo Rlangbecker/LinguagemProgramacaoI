@@ -39,7 +39,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity (name = "conta")
+@Entity(name = "conta")
 public class Conta {
 
     @Id
@@ -57,7 +57,7 @@ public class Conta {
     @Column(name = "tipo_conta")
     private TipoConta tipoConta;
 
-    @OneToOne(fetch =FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente")
     @JsonIgnoreProperties("conta")
     private Cliente cliente;

@@ -48,7 +48,7 @@ public class ContaService {
      * Metodo para criar uma nova entidade de Conta
      *
      * @param contaCreateDTO contaCreateDTO
-     * @param tipoConta tipoConta
+     * @param tipoConta      tipoConta
      * @return {@link ContaCreateDTO} contaCreateDTO
      * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
@@ -80,7 +80,7 @@ public class ContaService {
      * Metodo para editar uma nova entidade de Conta
      *
      * @param contaCreateDTO contaCreateDTO
-     * @param id        Integer
+     * @param id             Integer
      * @return {@link ContaDTO} contaDTO
      * @throws RegraDeNegocioException - Caso o agenciaCreateDTO possua informacoes iguais a alguma outra conta que exista no banco de dados
      *                                 ele lanca uma excecao, informando o motivo.
